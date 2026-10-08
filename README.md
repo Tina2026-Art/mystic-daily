@@ -2,6 +2,28 @@
 
 Mystic Daily 是一款每日塔罗、卢恩符文与小六壬灵感工具。本仓库同时包含 Google Chrome 扩展和 iOS / Android App。
 
+## 普通用户：直接下载
+
+### Android 手机
+
+**[点击下载 Mystic Daily Android 安装包（APK）](https://github.com/Tina2026-Art/mystic-daily/releases/download/v1.0.0/Mystic-Daily-Android-v1.0.0.apk)**
+
+也可以用 Android 手机扫描二维码下载：
+
+![Mystic Daily Android APK 下载二维码](docs/android-download-qr.png)
+
+下载后打开 APK，根据手机提示允许“安装未知应用”并完成安装。该文件是测试签名版本，Android 可能显示安全提醒。
+
+### Google Chrome 浏览器
+
+**[点击下载 Mystic Daily Chrome 扩展 ZIP](https://github.com/Tina2026-Art/mystic-daily/releases/download/v1.0.0/mystic-daily-chrome-extension-v8.5.0.zip)**
+
+Chrome 不允许从普通网站直接一键安装非商店扩展。下载并解压后，需要在 `chrome://extensions/` 开启“开发者模式”，再选择“加载已解压的扩展程序”。详细图文步骤见 [`USER_GUIDE.md`](USER_GUIDE.md)。
+
+### iPhone / iPad
+
+当前没有可直接安装的 iOS 包。iPhone 版本需要 Apple Developer 签名并通过 TestFlight 或 App Store 分发。
+
 ## 版本
 
 - [`chrome-extension/`](chrome-extension/)：Google Chrome Extension（Manifest V3）
