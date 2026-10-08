@@ -5,7 +5,7 @@ Mystic Daily 的 iOS / Android 独立 App 工程。当前版本完整保留 Chro
 ## 工程信息
 
 - App 名称：Mystic Daily
-- 版本：1.0.0（versionCode / build 1）
+- Android 版本：1.0.3（versionCode 4）；iOS 尚未构建发布。
 - 暂定 Bundle ID / Application ID：`com.mysticdaily.ritual`
 - 技术栈：Capacitor 8 + 原生 iOS / Android 容器
 - Android：minSdk 24，targetSdk 36

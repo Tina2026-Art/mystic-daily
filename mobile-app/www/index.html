@@ -9,7 +9,7 @@
   <title>Mystic Daily</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="popup.css">
-  <link rel="stylesheet" href="enhancements.css">
+  <link rel="stylesheet" href="enhancements.css?v=rune-layout-853">
   <link rel="stylesheet" href="mobile.css">
 </head>
 <body>
@@ -47,11 +47,21 @@
         <div class="card-face card-back">
           <span class="card-mark">ᚱ</span><small>RUNE</small><em>点击揭开</em>
         </div>
-        <div class="card-face card-front">
-          <div class="card-kicker">RUNE</div>
-          <div class="rune-symbol" id="runeSymbol">ᚱ</div>
-          <h2 id="runeName"></h2>
-          <span id="runeShort" class="pill"></span>
+        <div class="card-face card-front rune-front">
+          <div class="rune-kicker" aria-hidden="true"><span>✦</span> RUNE <span>✦</span></div>
+          <div class="rune-sky" aria-hidden="true">
+            <i class="rune-star rune-star-left">✦</i>
+            <i class="rune-moon"></i>
+            <i class="rune-star rune-star-right">✦</i>
+          </div>
+          <div class="rune-branches" aria-hidden="true"><span>❧</span><span>❧</span></div>
+          <div class="rune-stone">
+            <div class="rune-symbol" id="runeSymbol">ᚱ</div>
+          </div>
+          <div class="rune-nameplate">
+            <h2 id="runeName"></h2>
+            <span id="runeShort" class="pill"></span>
+          </div>
         </div>
       </button>
     </section>

@@ -70,7 +70,17 @@ async function saveDraw(){const old=db.history.find(x=>x.date===today());const r
 function themeText(){return `${tarotData.short} × ${runeData.short}`;}
 function synthesis(){return `今天不需要把所有事情一次想清楚。${tarotData.orientation==='正位'?'顺着已经出现的线索往前走':'先放慢一点，观察真正卡住你的地方'}；同时把注意力带回「${runeData.short.split(' / ')[0]}」。把这组象征当成提醒：今天最值得认真看见的，可能不是答案本身，而是你正在如何选择。`;}
 function reflection(){const qs={"新的开始、好奇心、勇气":"如果不用等到完全准备好，我今天愿意先开始什么？","选择、关系、价值":"如果只忠于自己的价值，我会怎么选？","变化、周期、机会":"面对正在发生的变化，我真正能掌控的是什么？","希望、疗愈、愿景":"我愿意为未来的自己保留哪一点希望？","不确定、想象、潜意识":"哪些是事实，哪些只是我的想象？","完成、整合、阶段":"有什么值得我承认：这一阶段，我已经做到了？"};return qs[tarotData.short]||`今天，我真正想看见、理解或选择的是什么？`;}
+function renderRuneArt(){
+  const index=RUNES.findIndex(r=>r[1]===runeData.name);
+  if(index<0)return;
+  const front=$('runeCard').querySelector('.rune-front');
+  let art=front.querySelector('.rune-deck-art');
+  if(!art){art=document.createElement('img');art.className='rune-deck-art';front.append(art);}
+  art.src=`assets/runes/${String(index+1).padStart(2,'0')}-${RUNES[index][1]}.png`;
+  art.alt=`${runeData.name} 卢恩牌面`;
+}
 function fillReading(){
+  renderRuneArt();
   $('tarotNumber').textContent=tarotData.number||tarotData.image;$('tarotName').textContent=tarotData.name;$('tarotOrientation').textContent=tarotData.orientation;$('tarotArt').src=`assets/tarot-green/${tarotData.image}.jpg`;$('tarotArt').alt=`${tarotData.name}牌面`;$('tarotArt').classList.toggle('reversed',tarotData.orientation==='逆位');
   $('runeSymbol').textContent=runeData.symbol;$('runeName').textContent=runeData.name;$('runeShort').textContent=runeData.short;
   $('themeKeywords').textContent=themeText();$('rSynthesis').textContent=synthesis();$('rReflection').textContent=reflection();

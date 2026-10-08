@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Mystic Daily - Google Chrome Extension",
-  "version": "8.5.0",
+  "version": "8.5.3",
   "description": "A one-minute daily ritual with Tarot, Rune, reflection and a private local history.",
   "action": {
     "default_popup": "popup.html",

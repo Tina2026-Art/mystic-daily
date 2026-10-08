@@ -6,9 +6,9 @@ Mystic Daily 提供 Google Chrome 扩展和 iOS / Android App 两种版本。它
 
 ## 最快下载
 
-- **Android：**[直接下载 APK](https://github.com/Tina2026-Art/mystic-daily/releases/download/v1.0.0/Mystic-Daily-Android-v1.0.0.apk)
-- **Chrome：**[直接下载扩展 ZIP](https://github.com/Tina2026-Art/mystic-daily/releases/download/v1.0.0/mystic-daily-chrome-extension-v8.5.0.zip)
-- **全部文件：**[打开 v1.0.0 下载页面](https://github.com/Tina2026-Art/mystic-daily/releases/tag/v1.0.0)
+- **Android：**[直接下载 APK](https://github.com/Tina2026-Art/mystic-daily/releases/download/v1.0.3/Mystic-Daily-Android-v1.0.3.apk)
+- **Chrome：**[直接下载扩展 ZIP](https://github.com/Tina2026-Art/mystic-daily/releases/download/v1.0.3/mystic-daily-chrome-extension-v8.5.3.zip)
+- **全部文件：**[打开 v1.0.3 下载页面](https://github.com/Tina2026-Art/mystic-daily/releases/tag/v1.0.3)
 
 Android 用户也可以扫描下面的二维码：
 
@@ -21,7 +21,7 @@ Android 用户也可以扫描下面的二维码：
 3. 如果手机阻止安装，请按提示允许当前浏览器或文件管理器“安装未知应用”。
 4. 返回安装页面，点击“安装”。
 
-该 APK 是测试签名版本，系统可能显示“未知来源”或类似提醒。请只从本仓库的 Release 页面下载，并核对文件名为 `Mystic-Daily-Android-v1.0.0.apk`。
+该 APK 是测试签名版本，系统可能显示“未知来源”或类似提醒。请只从本仓库的 Release 页面下载，并核对文件名为 `Mystic-Daily-Android-v1.0.3.apk`。
 
 ## 一、安装 Google Chrome 扩展
 

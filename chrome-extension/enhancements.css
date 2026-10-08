@@ -69,6 +69,231 @@ summary:focus-visible {
 .tarot-card .card-front .pill { position: relative; z-index: 3; background: #111214; border-color: #7b654d; color: #d7c7aa; }
 .ritual-card{height:276px}.tarot-card:hover .card-face{box-shadow:0 0 0 1px rgba(201,173,115,.28),0 12px 28px rgba(0,0,0,.42)}
 
+/* Rune deck — dark forest stone, antique gold and botanical framing. */
+.rune-card .card-back {
+  border-color: #8c815c;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(199,169,103,.12), transparent 31%),
+    repeating-radial-gradient(circle at 50% 45%, transparent 0 12px, rgba(175,157,105,.07) 13px 14px),
+    linear-gradient(145deg, #19201a, #080d0b 62%, #111811);
+  box-shadow: inset 0 0 0 3px #101710, inset 0 0 0 4px rgba(189,167,104,.45), 0 15px 35px #0009;
+}
+.rune-card .card-back::before {
+  content: "☾";
+  position: absolute;
+  top: 29px;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+  color: #c9a968;
+  font: 29px/1 Georgia, serif;
+  text-shadow: 0 0 16px rgba(208,174,100,.34);
+}
+.rune-card .card-back::after { inset: 9px; border-color: rgba(201,177,111,.62); box-shadow: inset 0 0 0 4px #111712, inset 0 0 0 5px rgba(112,125,91,.7); }
+.rune-card .card-back .card-mark {
+  display: grid;
+  width: 92px;
+  height: 116px;
+  place-items: center;
+  border: 1px solid rgba(198,174,108,.42);
+  border-radius: 46% 54% 43% 57% / 30% 35% 65% 70%;
+  background: radial-gradient(circle at 35% 23%, #465044, #283027 38%, #171d18 77%);
+  color: #d5ad69;
+  font: 58px/1 Georgia, serif;
+  text-shadow: 0 2px 2px #000, 0 0 13px rgba(215,175,101,.2);
+  box-shadow: 0 16px 22px #0008, inset 0 0 17px #0008;
+}
+.rune-card .card-back small { margin-top: 14px; color: #d4bd86; font-family: Georgia, serif; letter-spacing: 4px; }
+.rune-card .card-back em { color: #91896d; }
+
+.rune-card .rune-front {
+  position: absolute;
+  isolation: isolate;
+  justify-content: initial;
+  padding: 0;
+  border: 1px solid #817653;
+  background:
+    radial-gradient(circle at 50% 34%, rgba(135,142,101,.16), transparent 34%),
+    radial-gradient(circle at 18% 21%, #bda763 0 1px, transparent 1.5px),
+    radial-gradient(circle at 81% 28%, #bda763 0 1px, transparent 1.5px),
+    radial-gradient(circle at 25% 40%, rgba(189,167,99,.72) 0 1px, transparent 1.5px),
+    linear-gradient(155deg, #151c17, #070b09 69%, #121913);
+  box-shadow: inset 0 0 0 3px #0d130f, inset 0 0 0 4px rgba(191,167,101,.55), 0 15px 35px #0009;
+}
+.rune-card .rune-front::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  z-index: 0;
+  border: 1px solid rgba(210,184,111,.62);
+  border-radius: 11px;
+  box-shadow: inset 0 0 0 3px #111812, inset 0 0 0 4px rgba(92,105,76,.65);
+  pointer-events: none;
+}
+.rune-card .rune-front::after {
+  content: "";
+  position: absolute;
+  inset: 48px 16px 57px;
+  z-index: 0;
+  border-radius: 50% 50% 44% 44%;
+  background: repeating-conic-gradient(from -33deg at 50% 4%, rgba(195,170,100,.32) 0deg 1deg, transparent 1.5deg 8deg);
+  -webkit-mask: radial-gradient(ellipse at 50% 16%, transparent 0 30%, #000 31% 46%, transparent 47%);
+  mask: radial-gradient(ellipse at 50% 16%, transparent 0 30%, #000 31% 46%, transparent 47%);
+  opacity: .72;
+  pointer-events: none;
+}
+.rune-kicker {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  transform: translateX(-50%);
+  color: #d9c28e;
+  font: 10px/1 Georgia, serif;
+  letter-spacing: 4px;
+  white-space: nowrap;
+  text-shadow: 0 1px 4px #000;
+}
+.rune-kicker span { color: #b99555; font-size: 7px; }
+.rune-sky { position: absolute; inset: 36px 22px auto; z-index: 3; height: 27px; color: #c9ad70; }
+.rune-moon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  box-shadow: -5px 2px 0 0 #d0ae67;
+  filter: drop-shadow(0 0 6px rgba(209,174,101,.22));
+}
+.rune-star { position: absolute; top: 10px; font: normal 10px/1 Georgia, serif; }
+.rune-star-left { left: 4px; }
+.rune-star-right { right: 4px; }
+.rune-branches {
+  position: absolute;
+  inset: 78px 9px 60px;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  color: #75805c;
+  font: 66px/1 Georgia, serif;
+  opacity: .76;
+  text-shadow: 0 2px 3px #000;
+  pointer-events: none;
+}
+.rune-branches span:first-child { transform: rotate(-33deg) scale(.7,1.75); transform-origin: 100% 100%; }
+.rune-branches span:last-child { transform: rotate(33deg) scale(-.7,1.75); transform-origin: 0 100%; }
+.rune-stone {
+  position: absolute;
+  top: 69px;
+  bottom: 62px;
+  left: 50%;
+  z-index: 3;
+  width: 58%;
+  transform: translateX(-50%) rotate(-1deg);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(126,133,104,.5);
+  clip-path: polygon(17% 2%, 72% 0, 94% 14%, 100% 78%, 82% 98%, 23% 100%, 4% 82%, 0 21%);
+  border-radius: 26% 22% 30% 24% / 15% 18% 27% 31%;
+  background:
+    radial-gradient(circle at 24% 27%, rgba(185,188,151,.22) 0 2px, transparent 3px),
+    radial-gradient(circle at 73% 64%, rgba(7,10,8,.72) 0 3px, transparent 4px),
+    radial-gradient(circle at 61% 17%, rgba(151,158,128,.18) 0 5px, transparent 6px),
+    radial-gradient(ellipse at 72% 22%, #555e4f, transparent 34%),
+    linear-gradient(145deg, #4a5346, #2b332b 45%, #151b16);
+  box-shadow: 0 15px 18px #000b, inset 8px 8px 17px rgba(199,203,167,.08), inset -9px -10px 18px #0b0f0caa;
+}
+.rune-stone::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 44%, rgba(225,220,178,.1) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 81% 37%, rgba(225,220,178,.08) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 42% 71%, rgba(0,0,0,.34) 0 2px, transparent 3px),
+    linear-gradient(112deg, transparent 25%, rgba(229,219,174,.07) 26%, transparent 28% 67%, rgba(0,0,0,.22) 68%, transparent 70%);
+  mix-blend-mode: screen;
+}
+.rune-symbol {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: #d7ae69;
+  font: 72px/1 Georgia, "Times New Roman", serif;
+  text-shadow: 0 3px 2px #111, 0 0 13px rgba(221,180,103,.2);
+  filter: drop-shadow(0 1px 0 #f0cc83);
+}
+.rune-nameplate {
+  position: absolute;
+  right: 12px;
+  bottom: 11px;
+  left: 12px;
+  z-index: 5;
+  min-height: 49px;
+  padding: 6px 20px 5px;
+  border: 1px solid rgba(210,183,111,.72);
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(18,24,19,.98), rgba(7,11,9,.98));
+  box-shadow: inset 0 0 0 2px #101610, 0 -4px 16px #0007;
+  text-align: center;
+}
+.rune-card .rune-nameplate h2 {
+  position: relative;
+  margin: 0;
+  color: #e0c892;
+  font: 17px/1.1 Georgia, "Songti SC", serif;
+  text-shadow: 0 1px 4px #000;
+}
+.rune-card .rune-nameplate h2::before,
+.rune-card .rune-nameplate h2::after { content: "✦"; position: absolute; top: 4px; color: #c29e5f; font-size: 7px; }
+.rune-card .rune-nameplate h2::before { left: -8px; }
+.rune-card .rune-nameplate h2::after { right: -8px; }
+.rune-card .rune-nameplate .pill {
+  display: block;
+  overflow: hidden;
+  max-width: 100%;
+  margin-top: 3px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #938c74;
+  font-size: 7px;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rune-card:hover .card-face { box-shadow: inset 0 0 0 3px #0d130f, inset 0 0 0 4px rgba(210,184,111,.62), 0 14px 32px rgba(0,0,0,.62); }
+.rune-card.revealed .rune-symbol { animation: rune-awaken .8s cubic-bezier(.2,.75,.2,1) .38s both; }
+@keyframes rune-awaken { from { opacity: .25; transform: scale(.72); filter: drop-shadow(0 0 0 transparent); } to { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 9px rgba(223,180,100,.32)); } }
+@media (prefers-reduced-motion: reduce) { .rune-card.revealed .rune-symbol { animation: none; } }
+
+/* Approved illustrated Rune master; live symbols and names cover all 24 runes. */
+.rune-card .rune-front { background: #0c110d url("assets/ui/rune-stone-v4.png") center / 100% 100% no-repeat; border: 0; box-shadow: none; container-type: inline-size; }
+.rune-card .rune-front::before, .rune-card .rune-front::after,
+.rune-front .rune-kicker, .rune-front .rune-sky, .rune-front .rune-branches { display: none; }
+.rune-front .rune-stone { top: 37%; bottom: 32%; width: 42%; border: 0; border-radius: 0; clip-path: none; background: none; box-shadow: none; transform: translateX(-50%); overflow: visible; }
+.rune-front .rune-stone::before { display: none; }
+.rune-front .rune-symbol { color: #dec180; font-size: 76px; font-size: 40cqw; text-shadow: 0 1px 1px #322719, 0 -1px 0 #f2d797; filter: none; }
+.rune-card.revealed .rune-front .rune-symbol { animation: none; }
+.rune-front .rune-nameplate { left: 29%; right: 29%; bottom: 7.8%; height: 9%; min-height: 0; padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; display: flex; align-items: center; justify-content: center; }
+.rune-card .rune-nameplate h2 { font-size: 16px; font-size: clamp(12px, 8.2cqw, 24px); font-weight: normal; white-space: nowrap; }
+.rune-card .rune-nameplate h2::before, .rune-card .rune-nameplate h2::after, .rune-card .rune-nameplate .pill { display: none; }
+
+/* Complete approved 24-card artwork and matching illustrated back. */
+.rune-card .rune-front {background:#0c110d;}
+.rune-front > :not(.rune-deck-art) {display:none!important;}
+.rune-deck-art {position:absolute;inset:0;width:100%;height:100%;object-fit:fill;border-radius:15px;}
+.rune-card .card-back {background:#0c110d url("assets/ui/rune-stone-v4.png") center / 100% 100% no-repeat;border:0;box-shadow:none;}
+.rune-card .card-back::before,.rune-card .card-back::after,.rune-card .card-back .card-mark,.rune-card .card-back small {display:none;}
+.rune-card .card-back em {position:absolute;bottom:8%;margin:0;padding:3px 8px;color:#ddc38d;background:transparent;font-size:11px;letter-spacing:2px;}
+
 /* Approved 78-card deck: the artwork already contains the complete Tarot UI. */
 .tarot-card .card-front {
   padding: 0;
@@ -105,6 +330,19 @@ summary:focus-visible {
   color: #ead9ae;
   box-shadow: 0 2px 7px rgba(0,0,0,.45);
 }
+
+/* Shared mobile-first geometry: equal slots, gutters and visible frames. */
+.app {padding-left:16px;padding-right:16px;}
+.ritual {grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0;width:100%;margin:0 auto;}
+.ritual .ritual-card {width:100%;min-width:0;height:auto;aspect-ratio:2 / 3;}
+.ritual .card-face {border:0;border-radius:16px;box-shadow:0 8px 22px #0005;}
+.ritual .tarot-art {inset:auto;left:-2%;top:-1.5%;width:104%;height:103%;max-width:none;border-radius:0;object-fit:fill;}
+/* The rune source has a painted frame at x=22..949, y=22..1567.
+   Crop only the surrounding dark canvas, preserving the entire gold frame. */
+.rune-front .rune-deck-art {inset:auto;left:-2.373%;top:-1.424%;width:104.747%;height:104.79%;max-width:none;border-radius:0;object-fit:fill;}
+.ritual .rune-card .card-back {background-size:104.747% 104.79%;background-position:50% 29.73%;}
+.ritual .rune-card .card-back em {bottom:5.5%;}
+.ritual .tarot-card .card-front .pill {bottom:5px;padding:3px 7px;line-height:1.15;font-size:8px;}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

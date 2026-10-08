@@ -54,7 +54,7 @@ textarea {
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
-  gap: clamp(10px, 3vw, 18px);
+  gap: 12px;
   padding: 0;
 }
 
@@ -86,8 +86,7 @@ textarea {
 button { touch-action: manipulation; }
 
 @media (max-width: 360px) {
-  .app { padding-right: 10px; padding-left: 10px; }
-  .ritual { gap: 8px; }
+  .app { padding-right: max(16px, env(safe-area-inset-right)); padding-left: max(16px, env(safe-area-inset-left)); }
   .hero h1 { font-size: 24px; }
   .tarot-card .card-front .pill { font-size: 7px; }
 }
