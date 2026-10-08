@@ -1,0 +1,17 @@
+.DS_Store
+node_modules/
+dist/
+build/
+.gradle/
+DerivedData/
+Pods/
+*.xcuserstate
+*.jks
+*.keystore
+*.p12
+*.mobileprovision
+local.properties
+.env
+.env.*
+!.env.example
+*.log

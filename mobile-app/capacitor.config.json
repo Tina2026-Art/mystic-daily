@@ -1,0 +1,15 @@
+{
+  "appId": "com.mysticdaily.ritual",
+  "appName": "Mystic Daily",
+  "webDir": "www",
+  "backgroundColor": "#101A17",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": false
+  },
+  "ios": {
+    "contentInset": "automatic"
+  }
+}

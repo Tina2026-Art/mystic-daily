@@ -1,0 +1,25 @@
+{
+  "name": "mystic-daily-mobile",
+  "version": "1.0.0",
+  "description": "Mystic Daily mobile app for iOS and Android",
+  "scripts": {
+    "sync": "cap sync",
+    "open:ios": "cap open ios",
+    "open:android": "cap open android",
+    "test": "node --check www/app.js && node test/smoke.cjs"
+  },
+  "keywords": [],
+  "author": "Mystic Daily",
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/core": "^8.5.3",
+    "@capacitor/ios": "^8.5.3"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.5.3",
+    "jsdom": "^30.1.2"
+  }
+}

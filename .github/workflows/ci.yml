@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: mobile-app/package-lock.json
+      - name: Validate Chrome extension JavaScript
+        run: node --check chrome-extension/popup.js
+      - name: Install mobile dependencies
+        working-directory: mobile-app
+        run: npm ci
+      - name: Test mobile app
+        working-directory: mobile-app
+        run: npm test

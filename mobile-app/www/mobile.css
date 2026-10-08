@@ -1,0 +1,98 @@
+:root {
+  color-scheme: dark;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  min-height: 100%;
+  max-height: none;
+  overscroll-behavior-y: none;
+}
+
+body {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.app {
+  width: 100%;
+  max-width: 560px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding-right: max(16px, env(safe-area-inset-right));
+  padding-bottom: calc(28px + env(safe-area-inset-bottom));
+  padding-left: max(16px, env(safe-area-inset-left));
+}
+
+.topbar {
+  height: calc(60px + env(safe-area-inset-top));
+  padding-top: env(safe-area-inset-top);
+}
+
+.hero {
+  padding-top: clamp(30px, 8vw, 52px);
+  padding-bottom: 28px;
+}
+
+.hero h1 { font-size: clamp(25px, 7vw, 34px); }
+.hero p { font-size: 12px; }
+
+.ritual {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: clamp(10px, 3vw, 18px);
+  padding: 0;
+}
+
+.ritual-card {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  touch-action: manipulation;
+}
+
+.ritual-card:hover .card-face { box-shadow: none; }
+.ritual-card:active:not(.revealed) { transform: scale(.985); }
+.ritual-card.revealed:active { transform: rotateY(180deg); }
+
+.ritual-status { padding-top: 18px; }
+.ritual-status b { font-size: 12px; }
+.ritual-status span { font-size: 10px; }
+.reading { margin-top: 24px; }
+.theme-card p,
+.detail-block p,
+.yesno > p { font-size: 12px; }
+.details-card summary,
+.note-box textarea,
+.yesno textarea { font-size: 12px; }
+.primary-btn,
+.cast-btn,
+.ask-mystic { min-height: 44px; }
+
+button { touch-action: manipulation; }
+
+@media (max-width: 360px) {
+  .app { padding-right: 10px; padding-left: 10px; }
+  .ritual { gap: 8px; }
+  .hero h1 { font-size: 24px; }
+  .tarot-card .card-front .pill { font-size: 7px; }
+}
+
+@media (min-width: 700px) {
+  body { background: #07070b; }
+  .app { box-shadow: 0 0 80px rgba(0,0,0,.55); }
+}

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#101A17">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Mystic Daily</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="enhancements.css">
+  <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+<main class="app">
+  <header class="topbar">
+    <div>
+      <div class="brand">MYSTIC DAILY</div>
+      <div id="date" class="date"></div>
+    </div>
+    <button id="historyBtn" class="ghost-btn" aria-label="查看历史记录">历史</button>
+  </header>
+
+  <section id="todayPage">
+    <section class="hero">
+      <div class="eyebrow">YOUR DAILY RITUAL</div>
+      <h1>今天，有什么值得你看见？</h1>
+      <p>每天一次。揭开两张牌，留下一句属于今天的话。</p>
+    </section>
+
+    <section class="ritual">
+      <button class="ritual-card tarot-card" id="tarotCard" aria-label="揭开塔罗牌">
+        <div class="card-face card-back">
+          <span class="card-mark">✦</span><small>TAROT</small><em>点击揭开</em>
+        </div>
+        <div class="card-face card-front">
+          <div class="card-kicker">TAROT</div>
+          <img id="tarotArt" class="tarot-art" alt="" src="assets/tarot-green/00.jpg">
+          <div class="tarot-number" id="tarotNumber">00</div>
+          <h2 id="tarotName"></h2>
+          <span id="tarotOrientation" class="pill"></span>
+        </div>
+      </button>
+
+      <button class="ritual-card rune-card" id="runeCard" aria-label="揭开卢恩符文">
+        <div class="card-face card-back">
+          <span class="card-mark">ᚱ</span><small>RUNE</small><em>点击揭开</em>
+        </div>
+        <div class="card-face card-front">
+          <div class="card-kicker">RUNE</div>
+          <div class="rune-symbol" id="runeSymbol">ᚱ</div>
+          <h2 id="runeName"></h2>
+          <span id="runeShort" class="pill"></span>
+        </div>
+      </button>
+    </section>
+
+    <div class="ritual-status" aria-live="polite">
+      <b id="step">先揭开塔罗牌</b>
+      <span id="revealHint">今天的组合一旦生成，之后不会重新抽取。</span>
+    </div>
+
+    <section id="reading" class="reading hidden">
+      <div class="section-label">TODAY'S MESSAGE</div>
+      <div class="theme-card">
+        <div id="themeKeywords" class="theme-keywords"></div>
+        <p id="rSynthesis"></p>
+      </div>
+      <details class="details-card">
+        <summary>查看牌面解释</summary>
+        <div class="detail-block"><b id="rTitle"></b><p id="rTarot"></p></div>
+        <div class="detail-block"><b id="rRuneTitle"></b><p id="rRune"></p></div>
+      </details>
+      <div class="question-card">
+        <span>A QUESTION FOR YOU</span>
+        <p id="rReflection"></p>
+      </div>
+      <div class="note-box">
+        <label class="sr-only" for="note">记录今天的感受</label>
+        <textarea id="note" maxlength="300" placeholder="写下一句今天的感受……"></textarea>
+        <div class="note-actions"><span><span id="saveState" aria-live="polite"></span><span id="noteCount">0/300</span></span><button id="saveNote" class="primary-btn">保存今天</button></div>
+      </div>
+    </section>
+
+    <button id="askMysticBtn" class="ask-mystic">Need a quick answer? <b>Ask Mystic →</b></button>
+
+    <section id="yesno" class="yesno hidden">
+      <div class="sheet-head"><div><span>QUICK ANSWER</span><h2>Ask Mystic</h2></div><button id="closeMysticBtn" class="close-btn">×</button></div>
+      <p>想清楚一个只能回答「是 / 否」的问题。以点击瞬间的时间起卦，每日最多 3 次。</p>
+      <label class="sr-only" for="question">输入一个可以回答是或否的问题</label>
+      <textarea id="question" maxlength="180" placeholder="例如：我现在适合主动联系吗？"></textarea>
+      <div class="cast-meta"><span id="castCount">今日剩余 3 次</span><span>结果不保存</span></div>
+      <button id="castBtn" class="cast-btn">以此刻起卦</button>
+      <div id="castResult" class="cast-result hidden">
+        <small id="castTime"></small>
+        <div id="godName" class="god-name"></div>
+        <div id="godMeaning" class="god-meaning"></div>
+        <div id="answer" class="answer"></div>
+        <p id="answerReason"></p>
+        <div class="asked"><b>你的问题</b><p id="savedQuestion"></p></div>
+      </div>
+      <div class="privacy">小六壬在这里作为传统文化灵感与娱乐体验；问题与结果不会保存。</div>
+    </section>
+
+    <section class="recent">
+      <div class="recent-head"><div><span>RECENT</span><h2>最近的日子</h2></div><button id="calendarBtn" class="ghost-btn">View all</button></div>
+      <div id="historyList"></div>
+    </section>
+  </section>
+
+  <section id="calendarPage" class="calendar-page hidden">
+    <div class="calendar-head"><button id="backBtn" class="ghost-btn">← Today</button><h2 id="calendarTitle"></h2><div><button id="prevMonth" class="square-btn">‹</button><button id="nextMonth" class="square-btn">›</button></div></div>
+    <div class="month-progress"><span id="monthProgress"></span><div class="progress-track"><i id="progressBar"></i></div></div>
+    <div class="weekdays"><span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span></div>
+    <div id="calendarGrid" class="calendar-grid"></div>
+    <div id="dayDetail" class="day-detail hidden"></div>
+    <button id="clear" class="danger-btn">清空所有本地记录</button>
+  </section>
+
+  <footer>Tarot, Rune & Xiao Liuren are symbolic reflection tools for entertainment.</footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

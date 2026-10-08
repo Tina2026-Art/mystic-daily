@@ -1,0 +1,9 @@
+{
+  "name": "Mystic Daily",
+  "short_name": "Mystic Daily",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#101A17",
+  "theme_color": "#101A17",
+  "description": "每日塔罗、卢恩与自我反思仪式"
+}
